@@ -39,7 +39,7 @@ function getDryRunConfig() {
 
 function getCIConfig() {
 	return {
-		repositoryUrl: 'https://github.com/kad-products/tmplt-rwsdk',
+		repositoryUrl: 'https://github.com/kad-products/shed',
 		branches: ['main'],
 		plugins: [
 			[
