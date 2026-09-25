@@ -66,6 +66,7 @@
 	},
 	"packageManager": "pnpm@12.6.0",
 	"publishConfig": {
+		"access": "restricted",
 		"registry": "https://npm.pkg.github.com"
 	}
 }
