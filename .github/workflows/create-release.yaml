@@ -1,0 +1,14 @@
+name: Create Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  create-release:
+    uses: kad-products/platform/.github/workflows/create-release.yaml@better-shared-workflows
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    secrets: inherit

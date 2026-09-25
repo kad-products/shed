@@ -1,0 +1,70 @@
+{
+	"name": "@kad-products/shed",
+	"version": "0.1.0",
+	"license": "MIT",
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		"./rwsdk/server": {
+			"import": "./dist/rwsdk-server.js",
+			"types": "./dist/rwsdk-server.d.ts"
+		},
+		"./rwsdk/client": {
+			"import": "./dist/rwsdk-client.js",
+			"types": "./dist/rwsdk-client.d.ts"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"biome:check": "biome check",
+		"biome:fix": "biome check --write .",
+		"build": "tsup",
+		"ci:lint": "pnpm types:check && pnpm biome:check && pnpm knip:check && pnpm prettier:check",
+		"ci:tests": "pnpm test:run && pnpm build",
+		"dev": "tsup --watch",
+		"knip:check": "knip",
+		"knip:fix": "knip --fix",
+		"prepare": "husky",
+		"prettier:check": "prettier --check .",
+		"prettier:fix": "prettier --write .",
+		"test:run": "vitest run --coverage",
+		"test:ui": "vitest --ui",
+		"types:check": "tsc --noEmit"
+	},
+	"dependencies": {
+		"chalk": "^6.0.0",
+		"chalk-template": "^1.1.2",
+		"rwsdk": "^1.7.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.5",
+		"@cloudflare/workers-types": "^5.20260924.1",
+		"@commitlint/cli": "^20.4.1",
+		"@commitlint/config-conventional": "^20.4.1",
+		"@types/node": "^26.6.2",
+		"@types/react": "^18.3.0",
+		"@vitest/coverage-v8": "^5.0.1",
+		"husky": "^9.1.7",
+		"knip": "^6.32.2",
+		"lint-staged": "^17.5.1",
+		"prettier": "^3.8.1",
+		"prettier-plugin-packagejson": "^3.0.2",
+		"react": "^18.3.0",
+		"tsup": "^8.3.0",
+		"typescript": "^5.5.0",
+		"vitest": "^5.0.1"
+	},
+	"peerDependencies": {
+		"react": ">=18"
+	},
+	"peerDependenciesMeta": {
+		"react": {
+			"optional": true
+		}
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	}
+}

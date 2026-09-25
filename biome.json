@@ -1,0 +1,68 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineWidth": 130
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"preset": "recommended",
+			"suspicious": {
+				"noConsole": "error"
+			},
+			"nursery": {
+				"useExplicitType": "error"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"semicolons": "always",
+			"trailingCommas": "all",
+			"arrowParentheses": "asNeeded"
+		}
+	},
+	"files": {
+		"includes": [
+			"**",
+			"!.claude",
+			"!coverage",
+			"!worker-configuration.d.ts",
+			"!**/node_modules",
+			"!**/dist",
+			"!**/.wrangler",
+			"!**/test-results",
+			"!**/.pnpm-store"
+		]
+	},
+	"overrides": [
+		{
+			"includes": ["**/__tests__/**", "tests/**", "scripts/**"],
+			"linter": {
+				"rules": {
+					"nursery": {
+						"useExplicitType": "off"
+					},
+					"suspicious": {
+						"noExplicitAny": "off"
+					}
+				}
+			}
+		},
+		{
+			"includes": ["src/components/**", "src/forms/**", "src/layouts/**", "src/pages/**", "scripts/**"],
+			"linter": {
+				"rules": {
+					"suspicious": {
+						"noConsole": "off"
+					}
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,12 @@
+name: Create Release Dry Run
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  create-release-dry-run:
+    uses: kad-products/platform/.github/workflows/create-release-dry-run.yaml@better-shared-workflows
+    permissions:
+      contents: read
+    secrets: inherit
