@@ -64,8 +64,8 @@
 			"optional": true
 		}
 	},
+	"packageManager": "pnpm@12.6.0",
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com"
-	},
-	"packageManager": "pnpm@12.6.0"
+	}
 }
